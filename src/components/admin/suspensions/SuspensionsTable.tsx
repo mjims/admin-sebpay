@@ -20,7 +20,7 @@ export default function SuspensionsTable({
   })
   console.log('hey lol: ')
   console.log(suspensions)
-   var numero = 1;
+   let numero = 1;
 
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden">

@@ -54,7 +54,7 @@ export const getP2Ps = async (): Promise<P2PType[]> => {
 // Recupérer les kycs
 export const getKycs = async (): Promise<KycDocumentTypeListType[]> => {
   const response = await axiosInstance.get('/kyc-documents/')
-  return response.data
+  return response.data.results
 }
 
 // Recupérer les kycs
