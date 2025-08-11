@@ -6,6 +6,7 @@ import LiftSuspensionForm from './LiftSuspensionForm'
 import SuspensionDetailHeader from './SuspensionDetailHeader'
 import { User } from 'lucide-react'
 import type { SuspensionType } from '@/types'
+import Link from 'next/link'
 
 export default function SuspensionDetailClient({
   suspension,
@@ -45,9 +46,12 @@ export default function SuspensionDetailClient({
               </div>
             )}
             <div>
-              <a href="/suspensions" className="border border-(--link-simple-border) p-2 hover:bg-(--link-simple-bg-hover)">
-                Suspensions
-              </a>
+              <Link
+                href="/suspensions"
+                title="Retour à suspensions"
+                className="border border-(--link-simple-border) p-2 hover:bg-(--link-simple-bg-hover)"
+                
+              />
             </div>
           </div>
         </div>
