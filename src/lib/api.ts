@@ -10,9 +10,9 @@ import { KycDocumentType, KycDocumentTypeListType } from '@/types/kyc'
 import { HistoricalType } from '@/types/historical'
 
 // Récupérer la liste des utilisateurs
-export const getUsers = async (): Promise<UserListType[]> => {
+export const getUsers = async (): Promise<UserType[]> => {
   const response = await axiosInstance.get('/users/')
-  return response.data
+  return response.data.results
 }
 
 // Récupérer la liste des utilisateurs
@@ -52,7 +52,7 @@ export const getP2Ps = async (): Promise<P2PType[]> => {
 }
 
 // Recupérer les kycs
-export const getKycs = async (): Promise<KycDocumentTypeListType[]> => {
+export const getKycs = async (): Promise<KycDocumentType[]> => {
   const response = await axiosInstance.get('/kyc-documents/')
   return response.data.results
 }

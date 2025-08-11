@@ -123,12 +123,11 @@ export function SuspendMerchantModal({
           <div className="">
             <Textarea
               id="description"
-              className="col-span-3"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Détails de la suspension..."
               required
-              className="w-full resize-none mb-4 border-1 focus:ring-0 focus-visible:outline-none"
+              className="w-full col-span-3 resize-none mb-4 border-1 focus:ring-0 focus-visible:outline-none"
             />
           </div>
         

@@ -19,7 +19,7 @@ interface MerchantInfoCardProps {
     created_at?: string
     verification_status : 'approved' | 'pending' | 'rejected'
     description: string
-    real_balance?: string
+    real_balance?: number
     country_code?: string
     business_type: string
     owner?: {

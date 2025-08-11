@@ -3,14 +3,13 @@ import Link from 'next/link'
 import KYCStatusBadge from './KYCStatusBadge'
 import { useQuery } from '@tanstack/react-query'
 import { getKycs } from '@/lib/api'
-import { tr } from 'date-fns/locale'
 
 interface KYCDocument {
   id: string
-  user: string
-  type: string
+  merchant: string
+  document_type: string
   status: 'pending' | 'approved' | 'rejected'
-  submittedAt: string
+  uploaded_at: string
 }
 
 export default function KYCTable() {
@@ -40,7 +39,7 @@ export default function KYCTable() {
           documents?.map((doc) => (
             <tr key={doc.id}>
               <td className="px-6 py-4 whitespace-nowrap">{doc.merchant}</td>
-              <td className="px-6 py-4 whitespace-nowrap">{doc.document_type}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{doc.document_type.label}</td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <KYCStatusBadge status={doc?.status} />
               </td>

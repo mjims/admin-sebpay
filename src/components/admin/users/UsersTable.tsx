@@ -21,7 +21,7 @@ export default function UsersTable({
 
   console.log(users)
 
-  const filteredUsers = users?.results.filter(tx => {
+  const filteredUsers = users?.filter(tx => {
     if (status && tx.is_active !== status) return false
     if (date) {
       const txDate = new Date(tx.date_joined).toISOString().split('T')[0]
@@ -50,7 +50,7 @@ export default function UsersTable({
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            { users?.results.length === 0 && (
+            { users?.length === 0 && (
               <tr>
                 <td colSpan={8} className='px-6 py-5 text-center text-xs font-medium text-gray-500'>Aucune données disponible</td>
                 </tr>

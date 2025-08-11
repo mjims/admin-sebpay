@@ -18,7 +18,7 @@ export default function TransactionsTable({
     queryFn: getTransactions
   })
 
-  const filteredTransactions = transactions?.filter(tx => {
+  const filteredTransactions = transactions?.results.filter(tx => {
     if (status && tx.status !== status) return false
     if (date) {
       const txDate = new Date(tx.created_at).toISOString().split('T')[0]
@@ -51,7 +51,7 @@ export default function TransactionsTable({
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            { transactions?.length===0 && (
+            { transactions?.results.length === 0 && (
               <tr>
                 <td colSpan={8} className='px-6 py-5 text-center text-xs font-medium text-gray-500'>Aucune données disponible</td>
               </tr>
